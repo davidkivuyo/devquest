@@ -1,0 +1,115 @@
+/* ============================================
+   RESOURCES PAGE
+   ============================================ */
+
+.res-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.topic-chips {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  background: var(--bg-3);
+  padding: 4px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+}
+.topic-chip {
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  padding: 6px 12px;
+  border-radius: 7px;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+}
+.topic-chip:hover { color: var(--text); }
+.topic-chip.active {
+  background: var(--bg-2);
+  color: var(--text);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.res-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 14px;
+}
+
+.res-card {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all 0.2s var(--ease);
+  position: relative;
+}
+.res-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.res-card .res-topic {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.res-card h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+.res-card p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.res-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid var(--line-soft);
+}
+
+.res-link {
+  color: var(--accent);
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bookmark-btn {
+  background: none;
+  border: none;
+  color: var(--text-mute);
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.15s var(--ease), transform 0.15s var(--ease);
+}
+.bookmark-btn:hover {
+  color: var(--gold);
+}
+.bookmark-btn.on {
+  color: var(--gold);
+}
