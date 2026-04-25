@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevQuest — Level up your code</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/auth.css" />
+  </head>
+  <body>
+    <div class="auth-shell">
+      <!-- LEFT — branding / hero -->
+      <aside class="auth-art">
+        <div class="auth-brand">
+          <div class="brand-mark"><i class="fa-solid fa-dragon"></i></div>
+          <div class="auth-brand-name">Dev<span>Quest</span></div>
+        </div>
+
+        <div class="auth-hero">
+          <h1>Level up your code, one quest at a time.</h1>
+          <p>
+            DevQuest is a collaborative learning platform where students take on
+            real coding challenges, share progress, climb the leaderboard, and
+            ship features together — for real, on a real repo.
+          </p>
+
+          <div class="auth-stats">
+            <div class="auth-stat">
+              <div class="num">120+</div>
+              <div class="label">Challenges</div>
+            </div>
+            <div class="auth-stat">
+              <div class="num">8</div>
+              <div class="label">Pages to extend</div>
+            </div>
+            <div class="auth-stat">
+              <div class="num">3</div>
+              <div class="label">Difficulty tiers</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="auth-floating f1">
+          <div class="ico"><i class="fa-solid fa-bolt"></i></div>
+          <div>
+            <div style="font-weight:700">+50 XP earned</div>
+            <div class="muted" style="font-size:11.5px">
+              FizzBuzz challenge solved
+            </div>
+          </div>
+        </div>
+        <div class="auth-floating f2">
+          <div class="ico" style="background:linear-gradient(135deg,#fbbf24,#f59e0b)">
+            <i class="fa-solid fa-medal"></i>
+          </div>
+          <div>
+            <div style="font-weight:700">10-day streak</div>
+            <div class="muted" style="font-size:11.5px">Keep it going!</div>
+          </div>
+        </div>
+
+        <div class="muted" style="font-size:12px; position:relative; z-index:1">
+          <i class="fa-brands fa-github"></i>
+          &nbsp;Open source · fork it · ship a PR
+        </div>
+      </aside>
+
+      <!-- RIGHT — form panel -->
+      <section class="auth-panel">
+        <div class="auth-card">
+          <div class="auth-tabs" role="tablist">
+            <button class="auth-tab active" data-tab="login" role="tab">
+              Sign in
+            </button>
+            <button class="auth-tab" data-tab="register" role="tab">
+              Create account
+            </button>
+          </div>
+
+          <!-- LOGIN -->
+          <form class="auth-form" id="loginForm">
+            <h2>Welcome back, hero</h2>
+            <p class="sub">Sign in to continue your quest.</p>
+
+            <div class="form-error" id="loginError"></div>
+
+            <div class="field">
+              <label for="loginEmail">Email</label>
+              <div class="input-group">
+                <i class="fa-solid fa-envelope"></i>
+                <input
+                  type="email"
+                  id="loginEmail"
+                  class="input"
+                  placeholder="you@school.edu"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="loginPassword">Password</label>
+              <div class="input-group">
+                <i class="fa-solid fa-lock"></i>
+                <input
+                  type="password"
+                  id="loginPassword"
+                  class="input"
+                  placeholder="••••••••"
+                  autocomplete="current-password"
+                  required
+                />
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="fa-solid fa-arrow-right-to-bracket"></i> Sign in
+            </button>
+
+            <div class="auth-foot">
+              Try the demo: <strong>aisha@devquest.dev</strong> /
+              <strong>demo1234</strong>
+            </div>
+          </form>
+
+          <!-- REGISTER -->
+          <form class="auth-form hidden" id="registerForm">
+            <h2>Begin your journey</h2>
+            <p class="sub">Create an account — it takes 10 seconds.</p>
+
+            <div class="form-error" id="registerError"></div>
+
+            <div class="field">
+              <label for="regName">Display name</label>
+              <div class="input-group">
+                <i class="fa-solid fa-user"></i>
+                <input
+                  type="text"
+                  id="regName"
+                  class="input"
+                  placeholder="Ada Lovelace"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="regEmail">Email</label>
+              <div class="input-group">
+                <i class="fa-solid fa-envelope"></i>
+                <input
+                  type="email"
+                  id="regEmail"
+                  class="input"
+                  placeholder="you@school.edu"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="regPassword">Password</label>
+              <div class="input-group">
+                <i class="fa-solid fa-lock"></i>
+                <input
+                  type="password"
+                  id="regPassword"
+                  class="input"
+                  placeholder="At least 6 characters"
+                  required
+                />
+              </div>
+              <!-- CHALLENGE (Guided): the indicator below is a starter.
+                   See scorePassword() in js/auth.js to improve it. -->
+              <div class="pw-meter" id="pwMeter">
+                <span></span><span></span><span></span><span></span>
+              </div>
+              <div class="pw-meter-text" id="pwMeterText">
+                Type a password to see strength
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              <i class="fa-solid fa-rocket"></i> Create account
+            </button>
+
+            <div class="auth-foot">
+              By signing up you agree to be a kind, helpful citizen of DevQuest.
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <script src="data/seed.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+      // Bootstrap
+      Store.ensureSeeded();
+      UI.applyTheme();
+
+      // If already logged in, skip auth
+      if (Auth.current()) {
+        window.location.href = "pages/dashboard.html";
+      }
+
+      const tabs = document.querySelectorAll(".auth-tab");
+      const loginForm = document.getElementById("loginForm");
+      const registerForm = document.getElementById("registerForm");
+
+      tabs.forEach((t) =>
+        t.addEventListener("click", () => {
+          tabs.forEach((x) => x.classList.remove("active"));
+          t.classList.add("active");
+          if (t.dataset.tab === "login") {
+            loginForm.classList.remove("hidden");
+            registerForm.classList.add("hidden");
+          } else {
+            loginForm.classList.add("hidden");
+            registerForm.classList.remove("hidden");
+          }
+        })
+      );
+
+      // Password strength
+      const pw = document.getElementById("regPassword");
+      const meter = document.getElementById("pwMeter");
+      const meterText = document.getElementById("pwMeterText");
+      const labels = ["Too short", "Weak", "Okay", "Good", "Strong"];
+      pw.addEventListener("input", () => {
+        const score = scorePassword(pw.value);
+        meter.className = "pw-meter s" + score;
+        meterText.textContent = pw.value
+          ? labels[score]
+          : "Type a password to see strength";
+      });
+
+      // Login submit
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const err = document.getElementById("loginError");
+        err.classList.remove("show");
+        try {
+          Auth.login({
+            email: document.getElementById("loginEmail").value,
+            password: document.getElementById("loginPassword").value,
+          });
+          window.location.href = "pages/dashboard.html";
+        } catch (ex) {
+          err.textContent = ex.message;
+          err.classList.add("show");
+        }
+      });
+
+      // Register submit
+      registerForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const err = document.getElementById("registerError");
+        err.classList.remove("show");
+        try {
+          Auth.register({
+            name: document.getElementById("regName").value,
+            email: document.getElementById("regEmail").value,
+            password: document.getElementById("regPassword").value,
+          });
+          window.location.href = "pages/dashboard.html";
+        } catch (ex) {
+          err.textContent = ex.message;
+          err.classList.add("show");
+        }
+      });
+    </script>
+  </body>
+</html>
